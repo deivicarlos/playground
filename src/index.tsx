@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { store } from './app/store';
 import { Provider } from 'react-redux';
+import './index.css';
+import App from './app/App';
+import GradientText from './components/GradientText';
+import { store } from './store/store';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+
+      {/* <GradientText text="React with Tailwind CSS, Redux and TypeScript" /> */}
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

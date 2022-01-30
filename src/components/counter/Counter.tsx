@@ -1,43 +1,42 @@
-import React, { useState } from 'react';
-
+import { FunctionComponent } from 'react';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
-  decrement,
-  increment,
-  incrementByAmount,
-  incrementAsync,
-  incrementIfOdd,
-  selectCount,
-} from './counterSlice';
+  incrementCounter,
+  decrementCounter,
+} from '../../store/counter/actions';
+import { selectCountSelector } from '../../store/counter/selectors';
 import styles from './Counter.module.css';
 
-export function Counter() {
-  const count = useAppSelector(selectCount);
+// eslint-disable-next-line import/prefer-default-export
+export const Counter: FunctionComponent = () => {
+  const count = useAppSelector(selectCountSelector);
   const dispatch = useAppDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  // const [incrementAmount, setIncrementAmount] = useState('2');
 
-  const incrementValue = Number(incrementAmount) || 0;
+  // const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
       <div className={styles.row}>
         <button
+          type="button"
           className={styles.button}
           aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
+          onClick={() => dispatch(decrementCounter())}
         >
           -
         </button>
         <span className={styles.value}>{count}</span>
         <button
+          type="button"
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(incrementCounter())}
         >
           +
         </button>
       </div>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
@@ -62,7 +61,7 @@ export function Counter() {
         >
           Add If Odd
         </button>
-      </div>
+      </div> */}
     </div>
   );
-}
+};

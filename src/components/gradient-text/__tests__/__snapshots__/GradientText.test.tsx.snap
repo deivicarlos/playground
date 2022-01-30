@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GradientText renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="p-10 min-h-screen flex items-center justify-center bg-cool-gray-700"
+  >
+    <h1
+      class="text-9xl font-black text-center"
+    >
+      <span
+        class="gradient-color"
+      >
+        This is a unit test
+      </span>
+    </h1>
+  </div>
+</DocumentFragment>
+`;
