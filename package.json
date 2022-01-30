@@ -26,6 +26,17 @@
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "typecheck": "tsc --noEmit"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx}": [
+      "npx prettier --write",
+      "npm run lint"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -55,6 +66,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
     "jest": "^27.4.7",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
