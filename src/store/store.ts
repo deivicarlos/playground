@@ -5,15 +5,11 @@ import {
   ThunkAction,
 } from '@reduxjs/toolkit';
 import counterReducer from './counter/reducer';
+import matrixReducer from './matrix/reducer';
 
 export const appReducer = combineReducers({
   counter: counterReducer,
-});
-
-export const storeX = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  matrix: matrixReducer,
 });
 
 export const store = configureStore({
